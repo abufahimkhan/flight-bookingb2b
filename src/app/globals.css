@@ -1,0 +1,57 @@
+@import "keep-react/css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::selection {
+  background-color: #f6931d;
+  color: white;
+}
+.seBanner {
+  background-image: url("../assets/images/banner/banner.webp");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; 
+  background-position: center right;
+  position: relative;
+  z-index: 1;
+}
+.seBanner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* silk-carousel arrow color change */
+.slick-prev:before,
+.slick-next:before {
+  color: #0c254D !important;
+  font-size: 30px !important;
+}
+/* Targeting the arrows specifically for this component */
+.destination-slider .slick-prev,
+.destination-slider .slick-next {
+  top: 40%; /* Vertically center */
+  transform: translateY(-50%); /* Correct for the 50% top offset */
+  z-index: 1; /* Ensure they are above the content */
+}
+
+.destination-slider .slick-prev {
+  left: -25px; /* Adjust this value to control the horizontal position */
+}
+
+.destination-slider .slick-next {
+  right: -25px; /* Adjust this value to control the horizontal position */
+}
+.tb-sidebar {
+  min-height: 100% !important;
+}
+
+.user-signup-input {
+  @apply px-3 py-3 placeholder:text-gray-700 rounded-2xl border border-black focus:outline-none;
+}
